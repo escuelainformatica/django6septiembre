@@ -94,7 +94,6 @@ El nombre se llama <b>{{ nombre|lower }}</b><br>
 
 </ul>
 ```
-
 - [x] 7) En la carpeta del proyecto, en el archivo urls.py, vincular la ruta con la 
   funcion de la vista que se creo en el paso anterior
 

@@ -1,0 +1,12 @@
+<h1>listado</h1>
+<table border="1">
+    {% for auto in autos %}
+    <tr>
+    <td>{{ auto.id }}</td>
+    <td>{{ auto.id_marca.nombre }}</td>
+    <td>{{ auto.patente}}</td>
+    <td>{{ auto.propietario}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/auto/insertar">Insertar un auto</a>

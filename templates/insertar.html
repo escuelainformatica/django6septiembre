@@ -1,0 +1,16 @@
+<h1>Insertar</h1>
+
+<form method="post">
+    {% csrf_token %}
+    patente:<input type="text" name="patente" value="{{ auto.patente }}"/><br/>
+    propietario:<input type="text" name="propietario" value="{{ auto.propietario }}"/><br/>
+    id_marca:<select name="id_marca_id">
+                <option>--Seleccione una marca--</option>
+                {% for marca in marcas %}
+                <option value="{{ marca.id }}">{{ marca.nombre}}</option>
+                {% endfor %}
+            </select><br/>
+
+    <input type="submit" value="Enviar">
+
+</form>
