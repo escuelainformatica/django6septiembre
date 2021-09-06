@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auto/',st_app.views.Listado.as_view()),
     path('auto/insertar',st_app.views.Insertar.as_view()),
-    path('auto/modificar',st_app.views.Modificar.as_view()),
-    path('auto/eliminar',st_app.views.Eliminar.as_view()),
+    path('auto/modificar/<int:id>',st_app.views.Modificar.as_view()),
+    path('auto/eliminar/<int:id>',st_app.views.Eliminar.as_view()),
 ]

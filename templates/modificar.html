@@ -1,6 +1,6 @@
 {%  extends "pagina_maestra.html" %}
 {% block contenido %}
-<h1>Insertar</h1>
+<h1>Modificar</h1>
 
 <form method="post">
     {% csrf_token %}
@@ -9,7 +9,11 @@
     id_marca:<select name="id_marca_id">
                 <option>--Seleccione una marca--</option>
                 {% for marca in marcas %}
-                <option value="{{ marca.id }}">{{ marca.nombre}}</option>
+                    {% if marca.id == auto.id_marca_id %}
+                        <option value="{{ marca.id }}" selected>{{ marca.nombre}}</option>
+                    {% else %}
+                        <option value="{{ marca.id }}" >{{ marca.nombre}}</option>
+                    {% endif %}
                 {% endfor %}
             </select><br/>
 

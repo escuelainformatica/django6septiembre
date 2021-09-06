@@ -1,12 +1,17 @@
+{%  extends "pagina_maestra.html" %}
+{% block contenido %}
 <h1>listado</h1>
-<table border="1">
+<table class="table">
     {% for auto in autos %}
     <tr>
     <td>{{ auto.id }}</td>
     <td>{{ auto.id_marca.nombre }}</td>
     <td>{{ auto.patente}}</td>
     <td>{{ auto.propietario}}</td>
+    <td><a href="/auto/modificar/{{ auto.id}}">editar</a></td>
+    <td><a href="/auto/eliminar/{{ auto.id}}">eliminar</a></td>
     </tr>
     {% endfor %}
 </table>
 <a href="/auto/insertar">Insertar un auto</a>
+{% endblock %}
