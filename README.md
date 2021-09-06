@@ -40,7 +40,7 @@ python manage.py makemigrations <app>
 python manage.py migrate
 ```
 
-- [ ] 5) En la carpeta de la aplicación, editar views.py
+- [x] 5) En la carpeta de la aplicación, editar views.py
 
 5.1) Se puede crear una función para la vista
 
@@ -54,11 +54,7 @@ class Listado(View):
         pass
 ```
 
-
-
-
-
-4) En la carpeta de la aplicación, editar views.py
+5.3) Se puede editar las vistas con una funcion views.py
 
 ```python
 from django.shortcuts import render
@@ -74,9 +70,9 @@ def index(request):
     return HttpResponse(template.render(context, request))
 ```
 
-4.1) Donde def index(request) es el nombre de la funcion (puede poner cualquier nombre)
+5.3.1) Donde def index(request) es el nombre de la funcion (puede poner cualquier nombre)
 
-5) En el paso anterior se usa el template en la carpeta /templates/miapp/index.hml
+5.3.2) En el paso anterior se usa el template en la carpeta /templates/miapp/index.hml
 Cree ese archivo e indique un contenido web.
 
 ```html
@@ -95,13 +91,14 @@ El nombre se llama <b>{{ nombre|lower }}</b><br>
 </ul>
 ```
 
-- [x] 7) En la carpeta del proyecto, en el archivo urls.py, vincular la ruta con la 
-  funcion de la vista que se creo en el paso anterior
+- [x] 6) En la carpeta del proyecto, en el archivo urls.py, vincular la ruta con la 
+  función de la vista que se creo en el paso anterior
 
 ```python
 urlpatterns = [
     # ...
     path('index/',miapp.views.index) # aplicacion.views.funcion vista
+    path('auto/insertar',st_app.views.Insertar.as_view()), # agregar una clase vista
     # ....
 ]
 ```
